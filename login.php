@@ -53,7 +53,7 @@
                     </div>
 
                     <div class="form-group text-right">
-                        <button class="btn-btn-primary">Entrar</button>
+                        <button class="btn btn-primary">Entrar</button>
                     </div>
 
                 </form>
