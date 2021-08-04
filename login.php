@@ -4,22 +4,18 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="https://getbootstrap.com.br/favicon.ico">
+    <link rel="icon" href="favicon/novo.ico">
 
-    <title>DS 2</title>
+    <title>Achei voce.com</title>
 
     <!-- Principal CSS do Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet">
-
     <!-- Estilos customizados para esse template -->
     <link href="css/starter-template.css" rel="stylesheet">
-
     <!-- fonte icones -->
-
     <script src="js/fontawesome.js"></script>
 </head>
 
@@ -27,11 +23,12 @@
     <main role="main" class="container">
 
         <div class="row">
-            <div class="col-sm-4 offset-sm-4 border shadow bg-white rounded">
+            <div class="col-sm-4 offset-sm-4 border shadow bg-light rounded">
                 <h1 class="text-center">
-                    <a href="index.php">DS 2</a>
+                    <a href="index.php" class="font-weight-bold"><i class="fas fa-search"></i>
+                        Achei Você.com</a>
                 </h1 class="text-center">
-                <p>Faça o login para inicio da sessão!</p>
+                <p class="text-center text-warning font-weight-bold">Faça o login para inicio da sessão!</p>
 
                 <form action="">
                     <div class="input-group mb-3">
@@ -53,7 +50,7 @@
                     </div>
 
                     <div class="form-group text-right">
-                        <button class="btn btn-primary">Entrar</button>
+                        <button type="button" class="btn btn-outline-warning btn-lg">Entrar</button>
                     </div>
 
                 </form>
