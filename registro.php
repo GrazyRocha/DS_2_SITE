@@ -4,34 +4,31 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="https://getbootstrap.com.br/favicon.ico">
+    <link rel="icon" href="favicon/novo.ico">
 
-    <title>DS 2</title>
+    <title>Achei Voce.com</title>
 
     <!-- Principal CSS do Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet">
-
     <!-- Estilos customizados para esse template -->
     <link href="css/starter-template.css" rel="stylesheet">
-
     <!-- fonte icones -->
-
     <script src="js/fontawesome.js"></script>
 </head>
 
-<body cz-shortcut-listen="true" class="bg-secondary">
+<body cz-shortcut-listen="true" class="bg-light">
     <main role="main" class="container">
 
         <div class="row">
             <div class="col-sm-4 offset-sm-4 border shadow bg-white rounded">
                 <h1 class="text-center">
-                    <a href="index.php">DS 2</a>
+                    <a href="index.php"><i class="fas fa-users"></i>
+                    Achei você.com</a>
                 </h1>
-                <p class="text-center">Crie sua conta gratuita!</p></h1>
+                <p class="text-center text-warning font-weight-bold">Crie sua conta gratuita!</p></h1>
 
                 <form action="">
                 <div class="input-group mb-3">
@@ -71,7 +68,7 @@
                     </div>
 
                     <div class="form-group text-right">
-                        <button class="btn btn-primary">Cadastrar</button>
+                        <button type="button" class="btn btn-outline-warning btn-lg">Cadastrar</button>
                     </div>
 
                 </form>
