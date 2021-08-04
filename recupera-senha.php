@@ -8,16 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="https://getbootstrap.com.br/favicon.ico">
+    <link rel="icon" href="favicon/novo.ico">
 
-    <title>DS 2</title>
+    <title>Achei você.com</title>
 
     <!-- Principal CSS do Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet">
-
     <!-- Estilos customizados para esse template -->
     <link href="css/starter-template.css" rel="stylesheet">
-
     <!-- fonte icones -->
 
     <script src="js/fontawesome.js"></script>
@@ -28,10 +26,10 @@
 
         <div class="row">
             <div class="col-sm-4 offset-sm-4 border shadow bg-white rounded">
-                <h1 class="text-center">
-                    <a href="index.php">DS 2</a>
-                </h1 class="text-center">
-                <p>Informe seu e-mail para recuperar a senha!</p>
+                <h2 class="text-center">
+                    <a href="index.php"><i class="fas fa-grin-beam-sweat"></i>Achei voce.com</a>
+                </h2 class="text-center">
+                <p class="font-weight-bold text-warning">Informe seu e-mail para recuperar a senha!</p>
 
                 <form action="">
                     <div class="input-group mb-3">
@@ -43,8 +41,8 @@
                          aria-label="E-mail" aria-describedby="basic-addon1">
                     </div>
 
-                   <div class="form-group text-right">
-                        <button class="btn btn-primary">Recuperar</button>
+                    <div class="form-group text-right">
+                        <button type="button" class="btn btn-outline-warning btn-lg">Recuperar</button>
                     </div>
 
                 </form>
