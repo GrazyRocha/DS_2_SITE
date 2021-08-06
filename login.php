@@ -19,11 +19,11 @@
     <script src="js/fontawesome.js"></script>
 </head>
 
-<body cz-shortcut-listen="true" class="bg-secondary">
+<body cz-shortcut-listen="true" class="bg-light">
     <main role="main" class="container">
 
         <div class="row">
-            <div class="col-sm-4 offset-sm-4 border shadow bg-light rounded">
+            <div class="col-sm-4 offset-sm-4 border shadow bg-white rounded">
                 <h1 class="text-center">
                     <a href="index.php" class="font-weight-bold"><i class="fas fa-search"></i>
                         Achei Você.com</a>
