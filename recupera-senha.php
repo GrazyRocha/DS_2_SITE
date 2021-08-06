@@ -21,7 +21,7 @@
     <script src="js/fontawesome.js"></script>
 </head>
 
-<body cz-shortcut-listen="true" class="bg-secondary">
+<body cz-shortcut-listen="true" class="bg-light">
     <main role="main" class="container">
 
         <div class="row">
