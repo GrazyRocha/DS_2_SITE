@@ -31,14 +31,25 @@
                 <p class="text-center text-warning font-weight-bold">Crie sua conta gratuita!</p>
                 </h1>
 
-                <form action="validalogin.php" method="post" id="formCriaConta">
+                <?php
+                session_start();
+
+                if (isset($_GET['erro'])) {
+
+                    $erro = @$_SESSION['mensagemErro'];
+                    $dadosForm = $_SESSION['dadosForm'];
+                }
+                ?>
+
+                <form action="cria-conta.php" method="POST" id="formCriaConta">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">
                                 <i class="fas fa-user"></i></span>
                         </div>
-                        <input type="text" name="nome" id="nome" class="form-control"
-                        placeholder="nome" aria-label="nome" aria-describedby="basic-addon1">
+                        <input type="text" name="nome" id="nome" class="form-control" 
+                        placeholder="Nome Completo" aria-label="nome" aria-describedby="basic-addon1"
+                        value="<?php echo @$dadosForm['nome'];?>">
                     </div>
 
                     <div class="input-group mb-3">
@@ -47,16 +58,18 @@
                                 <i class="fas fa-envelope"></i></span>
                         </div>
                         <input type="text" name="email" id="email" class="form-control" 
-                        placeholder="email" aria-label="email" aria-describedby="basic-addon1">
+                        placeholder="email" aria-label="email" aria-describedby="basic-addon1"
+                        value="<?php echo @$dadosForm['email'];?>">
                     </div>
 
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">
                                 <i class="fas fa-unlock-alt"></i></span>
-                        </div> 
-                        <input type="password" name="senha" id="senha" class="form-control"
-                         placeholder="senha" aria-label="senha" aria-describedby="basic-addon1">
+                        </div>
+                        <input type="password" name="senha" id="senha" class="form-control" 
+                        placeholder="senha" aria-label="senha" aria-describedby="basic-addon1"
+                        value="<?php echo @$dadosForm['senha'];?>">
                     </div>
 
                     <div class="input-group mb-3">
@@ -65,16 +78,36 @@
                                 <i class="fas fa-unlock-alt"></i></span>
                         </div>
                         <input type="password" name="confirmaSenha" id="confirmaSenha" class="form-control" 
-                        placeholder="Repita a Senha" aria-label="Repita a Senha" aria-describedby="basic-addon1">
+                        placeholder="Repita a Senha" aria-label="Repita a Senha" aria-describedby="basic-addon1"
+                        value="<?php echo @$dadosForm['confirmaSenha'];?>">
                     </div>
 
+                    <?php 
+                        if(@$dadosForm['termos'] == 'on'){
+                            $checked = "   checked='checked'  ";
+                        }
+                    ?>
+
                     <div class="form-group form-check">
-                        <input type="checkbox" id="termo" name="termo" value="termo" class="form-check-input" >
+                        <input type="checkbox" id="termo" name="termo" value="termo" 
+                        class="form-check-input" <?php echo "@checked";?>>
                         <label class="form-check-label" for="exampleCheck1">
                             Aceitar os <a href="#" data-toggle="modal" data-target="#modalTermos">termos e Condições.</a>
                         </label>
                     </div>
 
+                    <?php 
+                        if(isset($_GET['erro'])){
+
+                            echo "<ul class='alert alert-danger'>";
+
+                                foreach($erro as $mensagem){
+                                    echo "<li>$mensagem</li>";
+                                }
+
+                            echo "</ul>";
+                        }
+                    ?>
                     <div class="form-group text-right">
                         <button type="submit" class="btn btn-outline-warning btn-lg">Cadastrar</button>
                     </div>
@@ -119,61 +152,61 @@
     <script src="jquery-validation/dist/jquery.validate.js"></script>
 
     <script>
-        $(document).ready(function(){
+        $(document).ready(function() {
             $("#formCriaConta").validate({
 
-                rules:{
-                    nome:'required',
-                    email:{
-                        required:true,
-                        email:true
-                    },
-                    senha:{
+                rules: {
+                    nome: 'required',
+                    email: {
                         required: true,
-                        minlength:5
+                        email: true
                     },
-                    confirmaSenha:{
+                    senha: {
                         required: true,
-                        minlength:5,
+                        minlength: 5
+                    },
+                    confirmaSenha: {
+                        required: true,
+                        minlength: 5,
                         equalTo: '#senha'
                     },
-                    termo:'required'
+                    termo: 'required'
                 },
                 messages: {
                     nome: 'O campo nome completo é obrigatório!',
-                    email:{
+                    email: {
                         required: 'O campo email é obrigatorio!',
-                        email:'Informe um email valido'
+                        email: 'Informe um email valido'
                     },
-                    senha:{
-                        required:'O campo senha é obrigatorio!',
-                        minlength:'A senha deve ter no minimo 5 caracteres.'
+                    senha: {
+                        required: 'O campo senha é obrigatorio!',
+                        minlength: 'A senha deve ter no minimo 5 caracteres.'
                     },
-                    confirmaSenha:{
-                        required:'Repita a senha',
-                        minlength:'A senha deve ser igual a anterior!',
-                        equalTo:'As senhas nao conferem'
+                    confirmaSenha: {
+                        required: 'Repita a senha',
+                        minlength: 'A senha deve ser igual a anterior!',
+                        equalTo: 'As senhas nao conferem'
                     },
-                    termo:'Aceitar os termos e condições'
+                    termo: 'Aceitar os termos e condições'
                 },
 
                 errorElement: "em",
-				errorPlacement: function ( error, element ) {
-					// Add the `invalid-feedback` class to the error element
-					error.addClass( "invalid-feedback" );
+                errorPlacement: function(error, element) {
+                    // Add the `invalid-feedback` class to the error element
+                    error.addClass("invalid-feedback");
 
-					if ( element.prop( "type" ) === "checkbox" ) {
-						error.insertAfter( element.next( "label" ) );
-					} else {
-						error.insertAfter( element );
-					}
-				},
-				highlight: function ( element, errorClass, validClass ) {
-					$( element ).addClass( "is-invalid" ).removeClass( "is-valid" );
-				},
-				unhighlight: function (element, errorClass, validClass) {
-					$( element ).addClass( "is-valid" ).removeClass( "is-invalid" );
-				}
+                    if (element.prop("type") === "checkbox") {
+                        error.insertAfter(element.next("label"));
+                    } else {
+                        error.insertAfter(element);
+                    }
+                },
+                highlight: function(element, errorClass, validClass) {
+                    $(element).addClass("is-invalid").removeClass("is-valid");
+                },
+                unhighlight: function(element, errorClass, validClass) {
+                    $(element).addClass("is-valid").removeClass("is-invalid");
+                }
 
             })
 
