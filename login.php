@@ -19,48 +19,74 @@
     <script src="js/fontawesome.js"></script>
 </head>
 
-<body cz-shortcut-listen="true" class="bg-light">
+<body cz-shortcut-listen="true" class="bg-dark">
     <main role="main" class="container">
 
         <div class="row">
-            <div class="col-sm-4 offset-sm-4 border shadow bg-white rounded">
-                <h1 class="text-center">
-                    <a href="index.php" class="font-weight-bold"><i class="fas fa-search"></i>
+            <div class="col-sm-4 offset-sm-4 mt-4 border shadow bg-dark rounded">
+                <h2 class="text-center">
+                    <a href="index.php" class="text-warning" class="font-weight-bold"><i class="fas fa-search"></i>
                         Achei Você.com</a>
-                </h1 class="text-center">
-                <p class="text-center text-warning font-weight-bold">Faça o login para inicio da sessão!</p>
+                </h2 class="text-center">
+                <p class="text-center text-white font-weight-bold">
+                    Faça o login para inicio da sessão!</p>
 
-                <form action="">
+                <?php session_start();
+
+                if (isset($_GET['erro']) ) {
+
+                    $dadosFormLogin = @$_SESSION['dadosFormLogin'];
+                    $erroLogin = @$_SESSION['mensagemErroLogin'];
+                }
+                ?>
+
+                <form action="valida-login.php" method="POST" id="formLogin">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">
                                 <i class="fas fa-envelope"></i></span>
                         </div>
-                        <input type="text" name="email" class="form-control" placeholder="E-mail"
-                         aria-label="E-mail" aria-describedby="basic-addon1">
+                        <input type="mail" name="email" class="form-control" placeholder="E-mail" aria-label="E-mail" 
+                        aria-describedby="basic-addon1" 
+                        value="<?php echo @$dadosFormLogin['email']; ?>">
                     </div>
 
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">
-                            <i class="fas fa-unlock-alt"></i></span>
+                                <i class="fas fa-unlock-alt"></i></span>
                         </div>
                         <input type="password" name="senha" class="form-control" placeholder="Senha" 
-                        aria-label="Senha" aria-describedby="basic-addon1">
+                        aria-label="Senha" aria-describedby="basic-addon1" 
+                        value="<?php echo @$dadosFormLogin['senha']; ?>">
                     </div>
 
+                    <?php 
+                    if (isset($erroLogin) ) {
+
+                        echo "<ul class='alert alert-danger'>";
+
+                        foreach ($erroLogin as $erro) {
+
+                            echo "<li> $erro </li>";
+                        }
+                        echo "</ul>";
+                    }
+
+                    ?>
+
                     <div class="form-group text-right">
-                        <button type="button" class="btn btn-outline-warning btn-lg">Entrar</button>
+                        <button type="submit" class="btn btn-outline-warning btn-lg">Entrar</button>
                     </div>
 
                 </form>
 
                 <p>
-                    <a href="recupera-senha.php">Esqueceu a senha?</a>
+                    <a href="recupera-senha.php" class="text-white font-weight-bold">Esqueceu a senha?</a>
                 </p>
 
                 <p>
-                    <a href="registro.php">Criar uma conta</a>
+                    <a href="registro.php" class="text-white font-weight-bold">Criar uma conta</a>
                 </p>
             </div>
         </div>
