@@ -21,15 +21,15 @@
     <script src="js/fontawesome.js"></script>
 </head>
 
-<body cz-shortcut-listen="true" class="bg-light">
+<body cz-shortcut-listen="true" class="bg-dark">
     <main role="main" class="container">
 
         <div class="row">
-            <div class="col-sm-4 offset-sm-4 border shadow bg-white rounded">
+            <div class="col-sm-4 offset-sm-4 border shadow bg-dark rounded">
                 <h2 class="text-center">
-                    <a href="index.php"><i class="fas fa-grin-beam-sweat"></i>Achei voce.com</a>
+                    <a href="index.php" class="text-warning"><i class="fas fa-grin-beam-sweat text-warning"></i>Achei voce.com</a>
                 </h2 class="text-center">
-                <p class="font-weight-bold text-warning">Informe seu e-mail para recuperar a senha!</p>
+                <p class="font-weight-bold text-white">Informe seu e-mail para recuperar a senha!</p>
 
                 <form action="">
                     <div class="input-group mb-3">
@@ -48,7 +48,7 @@
                 </form>
 
                 <p>
-                    <a href="login.php">Fazer login!</a>
+                    <a href="login.php" class="text-white font-weight-bold">Fazer login!</a>
                 </p>
 
             </div>

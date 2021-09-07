@@ -5,23 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="https://getbootstrap.com.br/favicon.ico">
+    <link rel="icon" href="favicon/novo.ico">
 
-    <title>DS 2</title>
+    <title>Achei Você.com</title>
 
     <!-- Principal CSS do Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet">
-
     <!-- Estilos customizados para esse template -->
     <link href="css/starter-template.css" rel="stylesheet">
-
     <!-- fonte icones -->
 
     <script src="js/fontawesome.js"></script>
   </head>
 
-  <body>
-
+  <body class="bg-dark" >
+  
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
       <a class="navbar-brand" href="https://getbootstrap.com.br/docs/4.1/examples/starter-template/#">Navbar</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,17 +48,18 @@
         </ul>
 
         <div class="my-2 my-lg-0">
-          <a href="login.php" class="btn btn-outline-success my-2 my-sm-0" >
+          <a href="login.php" class="btn btn-outline-light my-2 my-sm-0" >
             <i class="fas fa-sign-in-alt"></i>Login</a>
         </div>
       </div>
     </nav>
 
-    <main role="main" class="container">
+    <main role="main" class="container bg-dark border shadow rounded">
 
       <div class="starter-template">
-        <h1>Template Bootstrap inicial</h1>
-        <p class="lead">Use este documento como uma maneira de iniciar um novo projeto, rapidamente.<br>Tudo oquê você começa é com este texto e um documento HTML (quase vazio).</p>
+        <img src="imagens/procura.png">
+        <h1 class="text-warning"><i class="fas fa-search"></i>  Achei você.com</h1>
+        <p class="lead text-light font-weight-bold">Use este documento como uma maneira de iniciar um novo projeto, rapidamente.<br>Tudo oquê você começa é com este texto e um documento HTML (quase vazio).</p>
       </div>
 
     </main><!-- /.container -->
@@ -68,7 +67,7 @@
     <!-- Principal JavaScript do Bootstrap
     ================================================== -->
     <!-- Foi colocado no final para a página carregar mais rápido -->
-    <script src="js/jquery-3.js"></script>
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
     
     <script src="js/bootstrap.js"></script>
   

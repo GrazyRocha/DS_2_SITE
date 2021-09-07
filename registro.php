@@ -19,16 +19,16 @@
     <script src="js/fontawesome.js"></script>
 </head>
 
-<body cz-shortcut-listen="true" class="bg-light">
+<body cz-shortcut-listen="true" class="bg-dark">
     <main role="main" class="container">
 
         <div class="row">
-            <div class="col-sm-4 offset-sm-4 border shadow bg-white rounded">
+            <div class="col-sm-4 offset-sm-4 border shadow bg-dark rounded">
                 <h1 class="text-center">
-                    <a href="index.php"><i class="fas fa-users"></i>
+                    <a href="index.php" class="text-warning"><i class="fas fa-users" class="text-warning"></i>
                         Achei você.com</a>
                 </h1>
-                <p class="text-center text-warning font-weight-bold">Crie sua conta gratuita!</p>
+                <p class="text-center text-white font-weight-bold">Crie sua conta gratuita!</p>
                 </h1>
 
                 <?php
@@ -91,8 +91,9 @@
                     <div class="form-group form-check">
                         <input type="checkbox" id="termo" name="termo" value="termo" 
                         class="form-check-input" <?php echo "@checked";?>>
-                        <label class="form-check-label" for="exampleCheck1">
-                            Aceitar os <a href="#" data-toggle="modal" data-target="#modalTermos">termos e Condições.</a>
+                        <label class="form-check-label text-warning font-weight-bold" for="exampleCheck1">
+                            Aceitar os <a href="#" class="text-white" data-toggle="modal" 
+                            data-target="#modalTermos">termos e Condições.</a>
                         </label>
                     </div>
 
@@ -112,7 +113,7 @@
                         <button type="submit" class="btn btn-outline-warning btn-lg">Cadastrar</button>
                     </div>
                 </form>
-                <p><a href="login.php">Ja tenho uma conta</a></p>
+                <p><a href="login.php" class="text-white font-weight-bold">Ja tenho uma conta</a></p>
             </div>
         </div>
     </main><!-- /.container -->
