@@ -33,7 +33,7 @@ if ($totalLinhas < 1) {
     $_SESSION['mensagemErroLogin'][] = "Usuário ou senha inválidos!";
 }
 
-if ( $dadosUsuario['status_login'] == 0 ) {
+if ( $dadosUsuario['status_login'] == 0 && $totalLinhas > 0 ) {
    
     $cod_ativacao = $dadosUsuario['cod_ativacao'];
     $mensagem = "Voce ainda nao ativou sua conta.

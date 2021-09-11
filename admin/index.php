@@ -1,4 +1,6 @@
-<?php session_start()?>
+<?php 
+include("verifica-logado.php");
+?>
 
 <!DOCTYPE html>
 <!-- saved from url=(0063)https://getbootstrap.com.br/docs/4.1/examples/starter-template/ -->
@@ -61,7 +63,7 @@
         </ul>
 
         <div class="my-2 my-lg-0">
-          <a href="../login.php" class="btn btn-outline-light my-2 my-sm-0" >
+          <a href="logoff.php" class="btn btn-outline-light my-2 my-sm-0" >
             <i class="fas fa-sign-out-alt"></i>
             Sair</a>
         </div>
